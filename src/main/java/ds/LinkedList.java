@@ -9,18 +9,18 @@ public class LinkedList {
 	 *  b) Element at start or end of the list
 	 *  c) Element repeated. 
 	 */
-	public Node removeNode(int value, Node curr) {
-		Node start = curr;
-		while(start.next != null) {
-			if(start.next.value == value) {
-				start.next = start.next.next;
+	public Node removeNode(int value, Node start) {
+		Node curr = start;
+		while(curr.next != null) {
+			if(curr.next.value == value) {
+				curr.next = curr.next.next;
 			} else 
-				start = start.next;
+				curr = curr.next;
 		}
-		if( curr.value == value ) {
-			curr = curr.next;
+		if( start.value == value ) {
+			start = start.next;
 		}
-		return curr;
+		return start;
 	}
 	
 	/**
